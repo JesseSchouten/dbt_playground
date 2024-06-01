@@ -1,9 +1,9 @@
 {% test is_positive_integer(model, column_name) %}
 
 with validation as (
-    SELECT  {{column_name}} as positive_integer_field
+    SELECT  {{ column_name }} as positive_integer_field
 
-    FROM  {{model}}
+    FROM  {{ model }}
 ),
 
 validation_errors as (

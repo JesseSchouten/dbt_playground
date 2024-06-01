@@ -1,10 +1,10 @@
-SELECT 
-    ID AS id, 
-    ORDERID AS order_id, 
-    PAYMENTMETHOD AS payment_method, 
-    STATUS AS status, 
-    AMOUNT / 100 as amount, 
-    CREATED AS created,
-    CURRENT_TIMESTAMP() AS processed_at
+SELECT
+    ID,
+    ORDERID AS ORDER_ID,
+    PAYMENTMETHOD AS PAYMENT_METHOD,
+    STATUS,
+    CREATED,
+    AMOUNT / 100 AS AMOUNT,
+    CURRENT_TIMESTAMP() AS PROCESSED_AT
 FROM
-    {{ source("stripe", "stripe_payments")}}
+    {{ source("stripe", "stripe_payments") }}

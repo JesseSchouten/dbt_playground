@@ -8,6 +8,7 @@ authors = ["JesseSchouten <jesse.schouten@outlook.com>"]
 python = "^3.10"
 dbt-core = "1.7"
 dbt-databricks = "^1.7.15"
+sqlfluff = "^3.0.7"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
