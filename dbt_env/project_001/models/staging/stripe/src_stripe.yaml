@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: stripe
+    database: "{{ target.catalog }}"
+    schema: "{{ target.schema }}"
+    description: raw data from stripe.
+    tables:
+      - name: "stripe_payments"
+        tags:
+          - manualupload
+        loaded_at_field: CREATED::timestamp
+        freshness:
+          warn_after: { count: 10000, period: day }
+          error_after: { count: 11000, period: day }
+        columns:
+          - name: amount
+            description: "{{ doc('stripe_amount') }}"
+          - name: status
+            description: "{{ doc('stripe_status')}}"

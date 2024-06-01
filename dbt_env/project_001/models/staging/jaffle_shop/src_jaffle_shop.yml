@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: jaffle_shop_dataset
+    database: "{{ target.catalog }}"
+    schema: "{{ target.schema }}"
+    description: jaffle shop dataset
+    tables:
+      - name: "jaffle_shop_orders"
+        tags:
+          - manualupload
+        description: raw jaffle shop order data. unique order per row.
+        columns:
+          - name: id
+            description: Id of the order field.
+            tests:
+              - unique
+              - not_null
+      - name: "jaffle_shop_customers"
+        tags:
+          - manualupload
+        description: raw jaffle shop customer data. unique customer per row.
+        columns:
+          - name: id
+            description: Id of the customer field.
+            tests:
+              - unique
+              - not_null
