@@ -23,5 +23,5 @@
   - export databricks_pat=<databricks_pat>
   - export databricks_host=<databricks_host>
   - export databricks_http_path=<databricks_http_path>
-- Add .dbt/profiles.yaml file somewhere, e.g. in the project_001 directory.
+- Add .dbt/profiles.yaml file somewhere, e.g. in the dbt_env directory.
 - Set .dbt file location (<https://docs.getdbt.com/docs/core/connect-data-platform/connection-profiles#advanced-customizing-a-profile-directory>)

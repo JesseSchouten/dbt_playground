@@ -1,0 +1,38 @@
+version: 2
+
+sources:
+  - name: candy_store_dataset
+    database: "{{ target.catalog }}"
+    schema: "{{ target.schema }}"
+    description: candy store dataset
+    tables:
+      - name: "candy_store_orders"
+        tags:
+          - databricks_generated
+          - candy_store
+        description: raw candy store order data. unique order per row.
+        columns:
+          - name: order_id
+            description: Id of the order field.
+            tests:
+              - unique
+              - not_null
+          - name: customer_id
+            description: Id of the customer field.
+          - name: type
+            description: type of candy
+            tests:
+              - accepted_values:
+                  values:
+                    - Jawbreaker
+                    - M&M
+                    - Skittles
+          - name: timestamp
+            description: timestamp of the order
+          - name: amount
+            description: amount of the order
+            tests: 
+              - is_positive_number
+          - name: currency
+            description: currency of the order purchase
+        

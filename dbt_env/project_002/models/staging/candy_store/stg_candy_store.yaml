@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: stg_candy_store__orders 
+    description: candy store dataset
+    config:
+      tags:
+        - candy_store
+    columns:
+      - name: order_id
+        description: Primary Key of the candy store order
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: ID of the candy store customer
+      - name: type
+        description: type of candy
+        tests:
+          - accepted_values:
+              values:
+                - Jawbreaker
+                - M&M
+                - Skittles
+      - name: timestamp
+        description: timestamp of the order
+      - name: amount
+        description: amount of the order
+        tests:
+          - is_positive_number
+      - name: currency
+        description: currency of the order purchase
+
+
