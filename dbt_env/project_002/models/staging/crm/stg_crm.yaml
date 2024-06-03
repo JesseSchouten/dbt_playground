@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: stg_crm__customers
+    description: crm dataset
+    config:
+      tags:
+        - crm
+    columns:
+      - name: customer_id
+        description: Id of the customer field.
+        tests:
+          - unique
+          - not_null
+      - name: first_name
+        description: first name of the customer
+        tests:  
+          - not_null
+      - name: last_name
+        description: last name of the customer
+        tests:  
+          - not_null
+      - name: last_purchase_timestamp
+        description: timestamp of the last order purchase of customers

@@ -1,0 +1,29 @@
+version: 2
+
+sources:
+  - name: crm_dataset
+    database: "{{ target.catalog }}"
+    schema: "{{ target.schema }}"
+    description: crm dataset
+    tables:
+      - name: crm_customers
+        tags:
+          - databricks_generated
+          - candy_store
+        description: raw candy store customer data
+        columns:
+          - name: customer_id
+            description: Id of the customer field.
+            tests:
+              - unique
+              - not_null
+          - name: first_name
+            description: first name of the customer
+            tests:  
+              - not_null
+          - name: last_name
+            description: last name of the customer
+            tests:
+              - not_null
+          - name: last_purchase_timestamp
+            description: timestamp of the last order purchase of customers
