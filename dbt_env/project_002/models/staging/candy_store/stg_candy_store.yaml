@@ -24,11 +24,18 @@ models:
                 - Skittles
       - name: timestamp
         description: timestamp of the order
+      - name: order_date
+        description: date of the order
       - name: amount
         description: amount of the order
         tests:
           - is_positive_number
       - name: currency
         description: currency of the order purchase
+        tests:
+          - accepted_values:
+              values:
+                - EUR
+                - USD
 
 

@@ -32,8 +32,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   project_002:
+    +required_docs: true
     +required_tests: 
-      "unique.*|not_null": 100
+      "unique.*|not_null": 2
     # Config indicated by + and applies to all files under models/example/
     staging:
       +materialized: view

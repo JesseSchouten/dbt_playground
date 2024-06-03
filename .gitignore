@@ -166,3 +166,5 @@ target/
 dbt_packages/
 logs/
 *.code-workspace
+
+settings.json

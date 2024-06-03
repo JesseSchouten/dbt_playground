@@ -35,4 +35,9 @@ sources:
               - is_positive_number
           - name: currency
             description: currency of the order purchase
+            tests:
+              - accepted_values:
+                  values:
+                    - EUR
+                    - USD
         
