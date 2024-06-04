@@ -29,6 +29,9 @@ sources:
                     - Skittles
           - name: timestamp
             description: timestamp of the order
+            tests:
+              - dbt_utils.expression_is_true:
+                  expression: "> '2024-01-01'"
           - name: amount
             description: amount of the order
             tests: 

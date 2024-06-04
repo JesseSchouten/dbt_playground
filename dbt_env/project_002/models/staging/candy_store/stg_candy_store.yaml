@@ -26,10 +26,16 @@ models:
         description: timestamp of the order
       - name: order_date
         description: date of the order
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: "> '2024-01-01'"
       - name: amount
         description: amount of the order
         tests:
           - is_positive_number
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 100000
       - name: currency
         description: currency of the order purchase
         tests:
