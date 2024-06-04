@@ -16,6 +16,11 @@ models:
         description: first name of the customer
         tests:  
           - not_null
+      - name: customer_status
+        description: status of the customer
+        tests:
+          - accepted_values: 
+              values: ['active', 'inactive', 'blocked']
       - name: last_name
         description: last name of the customer
         tests:  

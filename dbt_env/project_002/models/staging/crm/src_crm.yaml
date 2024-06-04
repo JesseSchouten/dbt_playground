@@ -17,6 +17,12 @@ sources:
             tests:
               - unique
               - not_null
+          - name: status
+            description: status of the customer
+            tests:
+              - accepted_values: 
+                  values: 
+                    ['active', 'inactive', 'blocked']
           - name: first_name
             description: first name of the customer
             tests:  
