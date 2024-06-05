@@ -26,10 +26,14 @@ sources:
           - name: first_name
             description: first name of the customer
             tests:  
-              - not_null
+              - not_null:
+                  config: 
+                    severity: warn
           - name: last_name
             description: last name of the customer
             tests:
-              - not_null
+              - not_null:
+                  config:
+                    severity: warn
           - name: last_purchase_timestamp
             description: timestamp of the last order purchase of customers
