@@ -10,7 +10,9 @@ models:
       - name: order_id
         description: Primary Key of the candy store order
         tests:
-          - unique
+          - unique:
+              config:
+                limit: 10
           - not_null
           - dbt_expectations.expect_column_to_exist
       - name: customer_id

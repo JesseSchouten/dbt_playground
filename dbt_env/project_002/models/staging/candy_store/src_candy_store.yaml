@@ -15,7 +15,9 @@ sources:
           - name: order_id
             description: Id of the order field.
             tests:
-              - unique
+              - unique:
+                  config:
+                    limit: 10
               - not_null
           - name: customer_id
             description: Id of the customer field.

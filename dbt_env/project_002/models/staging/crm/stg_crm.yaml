@@ -10,7 +10,9 @@ models:
       - name: customer_id
         description: Id of the customer field.
         tests:
-          - unique
+          - unique:
+              config:   
+                limit: 10
           - not_null
       - name: first_name
         description: first name of the customer

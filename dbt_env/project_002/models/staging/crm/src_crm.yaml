@@ -15,7 +15,9 @@ sources:
           - name: customer_id
             description: Id of the customer field.
             tests:
-              - unique
+              - unique:
+                  config:   
+                    limit: 10
               - not_null
           - name: status
             description: status of the customer
