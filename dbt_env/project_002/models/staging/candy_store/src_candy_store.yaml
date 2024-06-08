@@ -10,6 +10,8 @@ sources:
         tags:
           - databricks_generated
           - candy_store
+        freshness:
+          error_after: { count: 1000, period: day }
         description: raw candy store order data. unique order per row.
         columns:
           - name: order_id
