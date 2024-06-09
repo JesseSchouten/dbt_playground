@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_candy_store__orders 
+  - name: stg_candy_store__orders
     description: candy store dataset
     config:
       tags:

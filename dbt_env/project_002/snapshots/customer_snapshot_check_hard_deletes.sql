@@ -9,4 +9,4 @@
   )
 }}
 SELECT * FROM {{source('crm_dataset', 'crm_customers')}}
-{%endsnapshot%}
+{% endsnapshot %}
