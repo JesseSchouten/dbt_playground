@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: src_active_customer_revenue
+    description: Active customer revenue view
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null

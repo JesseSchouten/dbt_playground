@@ -9,5 +9,5 @@ SELECT
   first_name,
   last_name,
   status AS customer_status,
-  last_purchase_timestamp
+  last_purchase_timestamp AS last_purchase_timestamp
 FROM {{ source('crm_dataset', 'crm_customers') }}

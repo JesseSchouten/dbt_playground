@@ -26,6 +26,7 @@ models:
                 - Jawbreaker
                 - M&M
                 - Skittles
+                - Gummy bears
       - name: timestamp
         description: timestamp of the order
       - name: order_date

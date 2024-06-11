@@ -7,7 +7,7 @@
 
 SELECT
     order_id,
-    type,
+    type AS type,
     customer_id,
     timestamp,
     DATE(timestamp) AS order_date,
@@ -17,4 +17,8 @@ SELECT
 FROM {{ source('candy_store_dataset', 'candy_store_orders') }}
 {% if is_incremental() %}
   WHERE timestamp > (SELECT COALESCE(MAX(timestamp), '1900-01-01') FROM {{ this }})
+  {% set is_first_where_statement = false %}
+  {% else %}
+  {% set is_first_where_statement = true %}
 {% endif %}
+{{ select_dev_data_range('timestamp', nr_days=1000, is_first_where_statement=is_first_where_statement) }}

@@ -15,13 +15,13 @@ models:
                 limit: 10
           - not_null
       - name: first_name
-        description: first name of the customer
+        description: first name of the customer.
         tests:  
           - not_null:
               config: 
                 severity: warn
       - name: last_name
-        description: last name of the customer
+        description: last name of the customer.
         tests:  
           - not_null:
               config: 
