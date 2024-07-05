@@ -28,3 +28,14 @@ project_002:
       token: "{{ env_var('DATABRICKS_PAT') }}"
       type: databricks
   target: dev
+project_003:
+  outputs:
+    dev:
+      catalog: dbt_practice
+      host: "{{ env_var('DATABRICKS_HOST') }}"
+      http_path: "{{ env_var('DATABRICKS_HTTP_PATH') }}"
+      schema: dbt_jesse_dev
+      threads: 1
+      token: "{{ env_var('DATABRICKS_PAT') }}"
+      type: databricks
+  target: dev

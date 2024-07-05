@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: marketing__fb_roi
+    description: Facebook ROI
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+      - name: product_id
+      - name: roi
+  - name: marketing__ga_roi
+    description: Google Ads ROI
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+      - name: product_id
+      - name: roi

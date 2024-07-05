@@ -3,6 +3,10 @@ version: 2
 models:
   - name: src_active_customer_revenue
     description: Active customer revenue view
+    config:
+      tags:
+        - marts
+        - finance
     columns:
       - name: customer_id
         tests:

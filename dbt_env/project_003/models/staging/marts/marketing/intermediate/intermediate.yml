@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: int__customer_attribution
+    description: Intermediate table
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+      - name: has_facebook
+      - name: has_google_ads
+      - name: has_none 

@@ -1,0 +1,52 @@
+version: 2
+
+sources: 
+  - name: website_data
+    database: "{{ target.catalog }}"
+    schema: "{{ target.schema }}"
+    description: website data
+    tables:
+      - name: "website_sessions"
+        tags:
+          - generated
+        description: raw website session data.
+        columns:
+          - name: session_id
+            description: Id of the session field.
+            tests:
+              - not_null
+          - name: customer_id
+            description: Id of the customer field.
+          - name: timestamp
+            description: Timestamp of the click within the session
+          - name: page
+            description: Page of the click
+            tests:
+              - accepted_values: 
+                  values: ['home_page', 'product_page', 'purchase_page']
+          - name: referral
+            description: medium that referred to the eventual session.
+            tests: 
+              - accepted_values: 
+                  values: ['facebook', 'google ads']
+      - name: "website_orders"
+        tags:
+          - generated
+        description: raw website order data. unique order per row.
+        columns:
+          - name: order_id
+            description: Id of the order field.
+            tests:
+              - not_null
+          - name: customer_id
+            description: Id of the customer field.
+          - name: timestamp
+            description: Timestamp of the order
+          - name: quantity
+            description: quantity of the product in the order
+          - name: product
+            description: name of the product
+          - name: currency
+            description: currency of the product
+          - name: price
+            description: price of the product
